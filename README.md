@@ -1,4 +1,4 @@
- <h2> <p align=center>PyBer Ride Sharing App Analysis</p></h2>
+ <h2> <p align=center>PyBer Ride-Sharing Data Analysis</p></h2>
 
 <h3> Background & Purpose </h3>
 The rideshare data for PyBer app company has been analyzed using exploratory data analysis with the goal of improving access to ride-sharing services and to determine affordability for undeserved neighborhoods.  This report takes further account of the total weekly fares for each city type using the multiple-line graph. Let us take a closer look at the analysis, results and recommendations based on the results of the analysis in the following sections.
@@ -9,7 +9,7 @@ The rideshare data for PyBer app company has been analyzed using exploratory dat
   - Data Source: city_data.csv, ride_data.csv
   - Software: Python 3.7.10, Jupyter Notebook
 
-<h3> Overview Of The Analysis </h3>
+<h2> Overview Of The Analysis </h2>
 
 <h4> Data Preparation: </h4>
 <p>
@@ -23,19 +23,16 @@ In the first step, city_data and ride_data were imported into two separate dataf
 
 <h4>Preliminary Analysis From The Ride-sharing Summary Dataframe: </h4>
 
-The summary dataframe contains total and average metrics by ciy types. It gives us clarity on the city-wise counts of total rides, total drivers, total fares and also averages of city-wise per ride fares and per driver fares. The observations from the summary dataframe are listed below:
+The summary dataframe contains total and average metrics by city types. It gives us clarity on the city-wise counts of total rides, total drivers, total fares and also averages of city-wise per ride fares and per driver fares. The observations from the summary dataframe are discussed in the result section below.
 
-- The number of rides are highest in urban areas and lowest in rural areas. The numbers for rides in suburban areas lie in the middle range of that of urban and rural areas. 
-- The number of drivers also follow the same pattern seen for the number of rides, going from highest to lowest from urban to rural.
-- Total Fares, Average Fare Per Ride and Average Fare Per Driver, all follow the exactly opposite trend from the one observed in Total Rides and Total Drivers. All the fares go from highest to lowest from Rural to Urban areas, suburban being in the middle range. 
 
-<h4>Conclusion:</h4>The data in the summary dataframe shows that the Fares are driven by the number of rides and drivers available in the city. Fares show negative correlation with the two variables in consideration: rides and drivers.
+<h4>Conclusion:</h4>The data in the summary dataframe shows that the fares, rides and drivers exhibit specific patterns. Fares show negative correlation with the two variables in consideration: rides and drivers.
 
 
 <h4> Total Weekly Fares Analysis For Each Type Of City: </h4>
-For this analysis, a new dataframe containing city-wise fares for each date is filtered out from previously merged dataframe pyber_data_df. This dataframe is further processed to create a pivot table. The city-wise fare data from Januray 01, 2019 to April 28, 2019 is captured in a new dataframe using pandas loc function and the date column which is also an index, is set to the date-time format. In the next step, weekly_pyber_fares_df captured the weekly sums for fares for each city type.
+For this analysis, a new dataframe containing city-wise fares for each date is filtered out from previously merged dataframe pyber_data_df. This dataframe is further processed to create a pivot table. The city-wise fare data from Januray 01, 2019 to April 28, 2019 is captured in a new dataframe using pandas loc function. Then the index containing the dates, is set to the date-time format, which is a pre-requisite for using resample function. In the next step, weekly_pyber_fares_df is used to capture the weekly sums for fares for each city type as shown below.
 
-
+<h4><p align=center>Total Weekly Fares By City Type</p></h4>
 <p align=center><kbd><img width="258" alt="weekly_fares" src="https://user-images.githubusercontent.com/90424752/142755181-2afca0c8-07dd-4ecd-8f0c-e0b50cee2f46.png"></kbd></p>
 
 <h4> Plotting The Multiline Graph </h4>
@@ -50,11 +47,13 @@ Using the above dataframe, we are doing exploratory data analysis to understand 
 - All three areas show a dictinct rise in fares in the third week of February.
 
 
-<h3> Results </h3>
+<h2> Results </h2>
 
-- The number of rides are highest in urban areas and lowest in rural areas. The number for rides in suburban areas lie in the middle range of that of urban and rural areas. 
+The results of the above analysis are discussed below :
+
+- The number of rides are highest in urban areas and lowest in rural areas, and the number of rides in suburban areas lie in between.
 - The number of drivers also follow the same pattern seen for the number of rides, going from highest to lowest from urban to rural.
-- Total Fares, Average Fare Per Ride and Average Fare Per Driver, all follow the exactly opposite trend from the one observed in Total Rides and Total Drivers. All the fares go from highest to lowest from Rural to Urban areas, suburban being in the middle range. 
+- Total Fares, Average Fare Per Ride and Average Fare Per Driver, all follow the exactly opposite trend to that of rides and drivers. All the fares go from highest to lowest from Rural to Urban areas, suburban falling in the middle range. 
 
 <h3> Summary </h3>
 
@@ -63,25 +62,26 @@ The summary dataframe explores the relationship between rides, number of drivers
 The multiline plot explores the trends shown by total weekly fares by each city type from January 2019 to April 2019. From the exploratory analysis carried out on the pyber data, following business recommendations can be made:
 
 
-<h4> Business Recommendations </h4>
+<h2> Business Recommendations </h2>
 
-1. To increase the revenue generated by densely populated urban areas while attracting more customers following strategies could be used:
-  - Usage based percentage or flat rate discounts
-  - Pyber Credits to new customers
-  - Increased advertising would be effective towards attracting new customers in urban areas.
+1. <h4>Urban Areas: </h4>To increase the revenue generated by densely populated urban areas while attracting more customers following strategies could be used:
+  - Increased advertising would be the most effective strategy as it would attract new customers in densely populated urban areas.
+  - Pyber Credits for new customers would increase the number of users of the service
+  - Usage based percentage discounts could make the existing customers continue the service
 
-2. The suburban areas could use a mix of promotional offers, advertisements and also offer some additional benefits to new drivers signing up from suburban areas.
+2. <h4>Suburban Areas: </h4>The suburban areas could use a mix of promotional offers, advertisements for the new and existing customers.
+  - In addition to that, offering some benefits to the new drivers signing up from suburban area would work towards increasing number of drivers in suburban areas.
 
-3. The higher fares in the rural areas might act as a discouraging factor. Rural areas could use following types of promotional offers to encourage more people to use the pyber ride-share service.
+3. <h4>Rural Areas: </h4>The higher fares in the rural areas might act as a discouraging factor. Rural areas could use following types of promotional offers to encourage more people to use the pyber ride-share service.
   - Promotional discount offers to repeating customers
-  - Pyber Credits to new customers
+  - Pyber Credits to new customers for attracting new users
   - Drivers signing up from rural areas could be given extra benefits to increase number of drivers from rural areas.
-  - Advertising would make more people aware of the benefits and 
+  - After studying the local demographics, advertising could make target audience aware of the pyber promotional offers and benefits.
 
-The recommendations made above, should be reinforced with additional analyses suggested below :
+<b>A few additional analyses below would help reinforce the recommendations made above :</b>
   - The EDA (Exploratory  Data Analysis) should be performed on the data from past years to confirm the trends and patterns found in this analysis.
   - The demographics relating to this data could be studied using EDA to discover trends shown by different age groups. Findings from this analysis could be used to strategize the recommendations for urban, suburban and rural areas.
-
+  - After implementing above recommendations, weekly rides per driver ratio could be very helpful in tracking their effectiveness. Surprisingly, current weekly rides per driver are more in rural areas than in urban areas. This indicates that there are more drivers available in urban areas and pyber is capable of handling more riders in urban areas. Advertisement and promotional offer implementation would help pyber make the best use of urban area's untapped driver potential.
 
 
 
